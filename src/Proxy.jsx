@@ -12,7 +12,7 @@ class Proxy extends React.Component{
     render(){
         return ( 
             <div>Devin's Proxy Server 
-                {/* <App/> */}
+                <App/>
             </div>
         );
     }
