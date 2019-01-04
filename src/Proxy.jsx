@@ -21,7 +21,7 @@ class Proxy extends React.Component{
     render(){
         return ( 
         <div>
-                <App id={this.state.id} />
+                <Comments id={this.state.id} />
                 <Project id={this.state.id}/>
                 <Pledge id={this.state.id} />
                 <Related id={this.state.id} onClick={this.handleClick}/>
