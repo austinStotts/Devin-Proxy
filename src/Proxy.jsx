@@ -7,37 +7,24 @@ class Proxy extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            currentProject_id: 2
+            id: Math.ceil(Math.random()*100)
         }
-        //Math.floor(Math.random()*100);
     }
 
-    changeMeProject(project_id){
+    handleClick(e,ID){
         this.setState({
-            currentProject_id: project_id
+            id: ID
         })
+        this.handleClick = this.handleClick.bind(this);
     }
 
     render(){
         return ( 
         <div>
-            <div className='DevinComments'>
-                DEVIN
-                <App/>
-            </div>
-
-            <div className='EricProjects'>
-                ERIC
-                <Project/>
-            </div>
-
-            <div className='MattRelatedProjects' changeMeProject={this.changeMeProject.bind(this)}>
-                MATT
-            </div>
-
-            <div className='MikePledgeDetails'>
-                MIKE
-            </div>
+                <App id={this.state.id} />
+                <Project id={this.state.id}/>
+                <Pledge id={this.state.id} />
+                <Related id={this.state.id} onClick={this.handleClick}/>
         </div>
 
         );
