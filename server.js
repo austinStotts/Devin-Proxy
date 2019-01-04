@@ -17,10 +17,10 @@ app.all("/Comments*", function(req, res) {
     apiProxy.web(req, res, {target: serverOne});
 });
 
-// app.all("   ", function(req, res) {
-//     console.log('redirecting to Server2');
-//     apiProxy.web(req, res, {target: ServerTwo});
-// });
+app.all("/projects*", function(req, res) {
+    console.log('redirecting to Server2');
+    apiProxy.web(req, res, {target: ServerTwo});
+});
 
 // app.all("    ", function(req, res) {
 //     console.log('redirecting to Server3');
