@@ -1,20 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-// const App = require('http://localhost:3001/App.jsx');
+
 
 class Proxy extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            currentProject_id: 2
+            id: Math.ceil(Math.random()*100)
         }
     }
+
+    handleClick(e,ID){
+        this.setState({
+            id: ID
+        })
+        this.handleClick = this.handleClick.bind(this);
+    }
+
     render(){
         return ( 
-            <div>Devin's Proxy Server 
-                {/* <App/> */}
-            </div>
+        <div>
+                <App id={this.state.id} />
+                <Project id={this.state.id}/>
+                <Pledge id={this.state.id} />
+                <Related id={this.state.id} onClick={this.handleClick}/>
+        </div>
+
         );
     }
 }
