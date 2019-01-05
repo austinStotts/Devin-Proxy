@@ -3,6 +3,9 @@ module.exports = {
     name: 'proxy',
     script: './server.js'
   }],
+  env_production: {
+    NODE_ENV: 'production'
+  },
   deploy: {
     production: {
       user: 'ubuntu',
@@ -11,7 +14,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:DevinKrok/Devin-Proxy.git',
       path: '/home/ubuntu/frontendCapstoneProxy',
-      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js  --env production'
     }
   }
 }
