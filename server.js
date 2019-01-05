@@ -17,21 +17,25 @@ var serverOne = process.env.SERVERONE || 'http://localhost:3001',
  
 app.all("/Comments*", function(req, res) {
     console.log('redirecting to Server1');
+    console.log('serverOne:',serverOne)
     apiProxy.web(req, res, {target: serverOne});
 });
 
 app.all("/projects*", function(req, res) {
     console.log('redirecting to Server2');
+    console.log('ServerTwo:',ServerTwo)
     apiProxy.web(req, res, {target: ServerTwo});
 });
 
 app.all("/pledges*", function(req, res) {
     console.log('redirecting to Server3');
+    console.log('ServerThree:',ServerThree)
     apiProxy.web(req, res, {target: ServerThree});
 });
 
 app.all("/related*", function(req, res) {
     console.log('redirecting to Server4');
+    console.log('ServerFour:',ServerFour)
     apiProxy.web(req, res, {target: ServerFour});
 });
 
