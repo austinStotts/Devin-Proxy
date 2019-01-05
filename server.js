@@ -18,6 +18,7 @@ var serverOne = process.env.SERVERONE || 'http://localhost:3001',
 app.all("/Comments*", function(req, res) {
     console.log('redirecting to Server1');
     console.log('serverOne:',serverOne)
+    console.log('process.env.NODE_ENV:',process.env.NODE_ENV);
     apiProxy.web(req, res, {target: serverOne});
 });
 
