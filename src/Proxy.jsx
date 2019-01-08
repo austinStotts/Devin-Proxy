@@ -6,6 +6,7 @@ import axios from 'axios';
 class Proxy extends React.Component{
     constructor(props){
         super(props);
+        this.handleClick = this.handleClick.bind(this);
         this.state={
             id: Math.ceil(Math.random()*100)
         }
@@ -15,16 +16,15 @@ class Proxy extends React.Component{
         this.setState({
             id: ID
         })
-        this.handleClick = this.handleClick.bind(this);
     }
 
     render(){
         return ( 
         <div>
-                <App id={this.state.id} />
-                <Project id={this.state.id}/>
+                {/* <Project id={this.state.id}/>
                 <Pledge id={this.state.id} />
-                <Related id={this.state.id} onClick={this.handleClick}/>
+                <Related id={this.state.id} onClick={this.handleClick}/> */}
+                <Comments id={this.state.id} />
         </div>
 
         );
